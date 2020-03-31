@@ -5,7 +5,7 @@
 # <bitbar.author>Jiseob Kim</bitbar.author>
 # <bitbar.author.github>nzer0</bitbar.author.github>
 # <bitbar.desc>Count the days to the submission deadlines of AI conferences.</bitbar.desc>
-# <bitbar.image>http://www.hosted-somewhere/pluginimage</bitbar.image>
+# <bitbar.image>https://github.com/nzer0/bitbar-aideadlines/blob/master/aid-screenshot.png?raw=true</bitbar.image>
 # <bitbar.dependencies>python3 (pyyaml, pytz, tzlocal)</bitbar.dependencies>
 # <bitbar.abouturl>https://github.com/nzer0/bitbar-aideadlines</bitbar.abouturl>
 
@@ -26,7 +26,8 @@ if not os.path.exists(SHB_FNAME):
 	with open(SHB_FNAME, "w") as sf:
 		sf.write('#!/bin/bash\n')
 		sf.write('SB=`which python3`\n')
-		sf.write('sed -i "" -e "1s:#!/usr/bin/env python3:#!/usr/bin/env $SB:" "$1"')
+		sf.write('sed -i "" -e "1s:#!/usr/bin/env python3:#!/usr/bin/env $SB:" "$1"\n')
+		sf.write('echo ">>> Now refresh the Bitbar <<<"')
 	os.chmod(SHB_FNAME, 0o755)
 
 '''Display instructions if the dependencies are not installed'''
@@ -42,7 +43,7 @@ except:
 	print("---")
 	print("If it is still not working, click below | color=black")
 	print(f"Ammend shebang | color=green bash='{SHB_FNAME}' param1={ME_PATH}")
-	print("then refresh the BitBar")
+	print("then refresh the BitBar | color=black")
 	sys.exit(1)
 
 '''Replace UTC with Etc/GMT to be handled by pytz'''
