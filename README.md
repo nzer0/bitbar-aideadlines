@@ -7,6 +7,4 @@ This plugin counts the days to the submission deadlines of AI conferences.
 ## License
 This plugin uses data provided by <https://aideadlin.es> maintained at <https://github.com/abhshkdz/ai-deadlines/>. 
 
-[MIT][1]
-
-[1]: https://abhshkdz.mit-license.org/
+MIT
