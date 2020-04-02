@@ -6,7 +6,7 @@
 # <bitbar.author.github>nzer0</bitbar.author.github>
 # <bitbar.desc>Count the days to the submission deadlines of AI conferences.</bitbar.desc>
 # <bitbar.image>https://github.com/nzer0/bitbar-aideadlines/blob/master/aid-screenshot.png?raw=true</bitbar.image>
-# <bitbar.dependencies>python3 (pyyaml, pytz, tzlocal)</bitbar.dependencies>
+# <bitbar.dependencies>python3 (pyyaml, pytz, tzlocal, wget)</bitbar.dependencies>
 # <bitbar.abouturl>https://github.com/nzer0/bitbar-aideadlines</bitbar.abouturl>
 
 
@@ -35,6 +35,7 @@ try:
 	import yaml
 	from pytz import timezone
 	from tzlocal import get_localzone
+	import wget
 except:
 	print("Install Dependencies")
 	print("---")
@@ -125,7 +126,6 @@ def seldl(conf_title):
 
 '''Get the deadlines list from aideadlin.es and process it'''
 def getdl():
-	import wget
 	if os.path.exists(DL_FNAME):
 			os.remove(DL_FNAME)
 	wget.download(AID_URL, DL_FNAME, False)
