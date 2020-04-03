@@ -117,6 +117,7 @@ def main():
 	print("---")
 	print(f"Update Conferences Info | bash={ME_PATH} param1=getdl terminal=false refresh=true")
 	print("Go to aideadlin.es | href='https://aideadlin.es'")
+	print("About this plugin | href='https://github.com/nzer0/bitbar-aideadlines")
 
 
 '''Select a particular deadline'''
