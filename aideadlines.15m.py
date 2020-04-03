@@ -53,7 +53,7 @@ def normalize_tz(tz):
 	if mo is None:
 		return tz
 	else:
-		return f"Etc/GMT{mo.group(1)}"
+		return f"Etc/GMT{-int(mo.group(1)):+d}"
 
 '''Parse the string to make a datetime obj with an appropriate local'''
 def make_datetime(c, abs=False):
@@ -62,7 +62,7 @@ def make_datetime(c, abs=False):
 
 '''Compute the datetime diff with now'''
 def get_diff(due):
-	return due - dt.datetime.now(tz=get_localzone())
+	return due - get_localzone().localize(dt.datetime.now())
 
 '''main Bitbar display'''
 def main():
